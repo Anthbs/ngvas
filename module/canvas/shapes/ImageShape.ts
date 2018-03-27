@@ -24,6 +24,7 @@ export class ImageShape extends BaseStyle {
 
     public withImage (img: string, callback?: (shape: ImageShape) => void): this {
         this._image = new Image();
+        this._image.crossOrigin = "Anonymous";
         this._image.src = img;
         if (callback !== undefined) {
             this._image.addEventListener("load", () => callback(this));
